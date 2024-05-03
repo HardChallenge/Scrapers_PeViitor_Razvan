@@ -60,7 +60,7 @@ class Scraper:
                 return None
         return cookies
 
-    def get_jobs_dict(self, job_title, job_link, city, remote="On-site"):
+    def push_job(self, job_title, job_link, city, remote="On-site"):
 
         self.jobs_list.append(
             {
