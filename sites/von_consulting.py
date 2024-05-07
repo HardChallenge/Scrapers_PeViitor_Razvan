@@ -1,7 +1,3 @@
-import sys, os
-
-sys.path.append(os.path.dirname(os.getcwd()))
-
 from src.scraper import Scraper
 from src.validate_city import validate_city
 
