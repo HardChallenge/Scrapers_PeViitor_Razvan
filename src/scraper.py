@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-from .county import get_county
-from .update_peviitor import UpdatePeViitor
+from county import get_county
+from update_peviitor import UpdatePeViitor
 
 
 class Scraper:

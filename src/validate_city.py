@@ -1,4 +1,4 @@
-import county
+from county import counties
 
 misspelled_cities = [
     {"Bucuresti": ["bucharest", "bucuresti", "buharest", "buacharest", "buahcharest"]},
@@ -15,7 +15,7 @@ def validate_city(city):
             if city.lower() in value:
                 return key
 
-    for item in county.counties:
+    for item in counties:
         for key, values in item.items():
             for value in values:
                 if city.lower() == value.lower():
