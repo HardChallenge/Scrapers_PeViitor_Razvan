@@ -1,4 +1,4 @@
-from county import counties
+from .county import counties
 
 misspelled_cities = [
     {"Bucuresti": ["bucharest", "bucuresti", "buharest", "buacharest", "buahcharest"]},
