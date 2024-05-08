@@ -1,7 +1,16 @@
 from .county import counties
 
 misspelled_cities = [
-    {"Bucuresti": ["bucharest", "bucuresti", "buharest", "buacharest", "buahcharest"]},
+    {
+        "Bucuresti": [
+            "bucharest",
+            "bucuresti",
+            "buharest",
+            "buacharest",
+            "buahcharest",
+            "buchares",
+        ]
+    },
     {"Cluj-Napoca": ["cluj napoca", "cluj", "cluj-napoca"]},
     {"Bolintin-Deal": ["bolintin-deal", "bolintin - deal"]},
     {"Campulung": ["campulung muscel", "campulung Muscel"]},
