@@ -2,23 +2,23 @@ from .county import counties
 
 misspelled_cities = [
     {
-        "Bucuresti": [
+        "București": [
             "bucharest",
             "bucuresti",
             "buharest",
             "buacharest",
             "buahcharest",
             "buchares",
+            "bucurești"
         ]
     },
     {"Cluj-Napoca": ["cluj napoca", "cluj", "cluj-napoca"]},
     {"Bolintin-Deal": ["bolintin-deal", "bolintin - deal"]},
-    {"Campulung": ["campulung muscel", "campulung Muscel"]},
+    {"Câmpulung": ["campulung muscel", "campulung Muscel"]},
     {"Poiana Lacului": ["poiana lacului"]},
 ]
 
-
-def validate_city(city):
+def validate_city(city: str) -> str:
     for item in misspelled_cities:
         for key, value in item.items():
             if city.lower() in value:
