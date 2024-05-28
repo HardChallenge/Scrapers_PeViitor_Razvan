@@ -10,7 +10,6 @@ Welcome to the repository of web scrapers designed to extract job listings from 
 - [Usage](#usage)
 - [Scrapers Included](#scrapers-included)
 - [Validation Functions](#validation-functions)
-- [Contributing](#contributing)
 - [Contact](#contact)
 
 ## About the Project
