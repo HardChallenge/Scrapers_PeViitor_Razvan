@@ -1,4 +1,5 @@
-from .county import counties
+from .county import counties, remove_diacritics
+from .neighborhood import neighborhoods
 
 misspelled_cities = [
     {
@@ -9,7 +10,7 @@ misspelled_cities = [
             "buacharest",
             "buahcharest",
             "buchares",
-            "bucurești"
+            "bucurești",
         ]
     },
     {"Cluj-Napoca": ["cluj napoca", "cluj", "cluj-napoca"]},
@@ -18,7 +19,14 @@ misspelled_cities = [
     {"Poiana Lacului": ["poiana lacului"]},
 ]
 
+
 def validate_city(city: str) -> str:
+    # Check if the city is the name of a neighborhood
+    for item in neighborhoods.items():
+        for value in item[1]:
+            if city.lower() == remove_diacritics(value.lower()):
+                return value
+
     for item in misspelled_cities:
         for key, value in item.items():
             if city.lower() in value:
@@ -27,6 +35,6 @@ def validate_city(city: str) -> str:
     for item in counties:
         for key, values in item.items():
             for value in values:
-                if city.lower() == value.lower():
-                    return city
+                if city.lower() == remove_diacritics(value.lower()):
+                    return value
     return None

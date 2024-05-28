@@ -34,7 +34,7 @@ class GFK(Scraper):
                     locations.append(res)
 
             locations = (
-                "Bucuresti" if not locations or len(locations) == 1 else locations
+                "București" if not locations or len(locations) == 1 else locations
             )
             self.push_job(title, link, locations)
 
