@@ -60,7 +60,7 @@ class Scraper:
                 return None
         return cookies
 
-    def push_job(self, job_title, job_link, city, remote="on-site"):
+    def push_job(self, job_title, job_link, city, county=None, remote="on-site"):
 
         self.jobs_list.append(
             {
@@ -68,7 +68,7 @@ class Scraper:
                 "job_link": job_link,
                 "company": self.company_name,
                 "country": "Romania",
-                "county": get_county(city),
+                "county": county if county is not None else get_county(city),
                 "city": city,
                 "remote": remote,
             }
