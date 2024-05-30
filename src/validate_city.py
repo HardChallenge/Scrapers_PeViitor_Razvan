@@ -25,7 +25,7 @@ def validate_city(city: str) -> str:
     for item in neighborhoods.items():
         for value in item[1]:
             if city.lower() == remove_diacritics(value.lower()):
-                return value
+                return item[0]
 
     for item in misspelled_cities:
         for key, value in item.items():
