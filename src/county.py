@@ -143,4 +143,4 @@ def get_county(town_or_towns):
             county = get_county(town)
             if county:
                 counties_list.append(county)
-        return counties_list
+        return list(set(counties_list))

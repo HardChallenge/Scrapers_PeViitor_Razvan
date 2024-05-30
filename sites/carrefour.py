@@ -40,15 +40,10 @@ class Carrefour(Scraper):
                 if (result := validate_city(" ".join(raw_locations))) is not None:
                     locations.append(result)
 
-                locations = (
-                    [
-                        (result := validate_city(item))
-                        for item in raw_locations
-                        if result is not None
-                    ]
-                    if len(locations) == 0
-                    else locations
-                )
+                for raw_location in raw_locations:
+                    result = validate_city(raw_location)
+                    if result is not None:
+                        locations.append(result)
 
                 locations = (
                     list(set(locations)) if len(locations) != 0 else ["București"]

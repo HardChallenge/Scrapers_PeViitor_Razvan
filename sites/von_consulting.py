@@ -43,10 +43,10 @@ class VonConsulting(Scraper):
                         or "romania" in low_location
                     ):
                         remote = "Remote"
-                        locations.append("Bucuresti")
+                        locations.append("București")
                     elif "hybrid" in low_location:
                         remote = "Hybrid"
-                        locations.append("Bucuresti")
+                        locations.append("București")
 
                 locations = list(set(locations))
 
