@@ -28,7 +28,7 @@ class Sievo(Scraper):
             if (result := validate_city(location[0][:-1].strip())) is None:
                 continue
 
-            self.push_job(title, link, result, "Remote")
+            self.push_job(title, link, result, remote="Remote")
 
 
 sievo = Sievo(

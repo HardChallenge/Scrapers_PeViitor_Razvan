@@ -51,7 +51,7 @@ class VonConsulting(Scraper):
                 locations = list(set(locations))
 
                 if locations:
-                    self.push_job(title, link, locations, remote)
+                    self.push_job(title, link, locations, remote=remote)
 
             page += 1
 

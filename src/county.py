@@ -58,7 +58,7 @@ abreviate_counties = {
     "bv": {"city": "Brașov", "county": "Brașov"},
     "b": {"city": "București", "county": "București"},
     "bz": {"city": "Buzău", "county": "Buzău"},
-    "cl": {"city": "Calărăsi", "county": "Calărăsi"},
+    "cl": {"city": "Calărăși", "county": "Calărăși"},
     "cs": {"city": "Reșita", "county": "Caraș-Severin"},
     "cj": {"city": "Cluj-Napoca", "county": "Cluj"},
     "ct": {"city": "Constanța", "county": "Constanța"},
