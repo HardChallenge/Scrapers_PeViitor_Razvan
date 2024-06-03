@@ -37,6 +37,12 @@ class Scraper:
         ).json()
         return response
 
+    def post_json_link(self, link, headers=None, json=None, data=None, params=None):
+        response = requests.post(
+            link, headers=headers, json=json, data=data, params=params
+        ).json()
+        return response
+
     def post_json(self, headers=None, json=None, data=None, params=None):
         response = requests.post(
             self.url, headers=headers, json=json, data=data, params=params

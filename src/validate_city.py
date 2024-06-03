@@ -10,7 +10,6 @@ misspelled_cities = [
             "buacharest",
             "buahcharest",
             "buchares",
-            "bucurești",
         ]
     },
     {"Cluj-Napoca": ["cluj napoca", "cluj", "cluj-napoca"]},
