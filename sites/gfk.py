@@ -24,6 +24,17 @@ class GFK(Scraper):
 
         for job in jobs:
             link = f"{self.url}{job['href']}"
+            remote = "on-site"
+
+            job_page_paragraphs = self.get_link_soup(link).find_all("p")
+            for paragraph in job_page_paragraphs:
+                if "remote" in paragraph.text.lower():
+                    remote = "remote"
+                    break
+                if "hybrid" in paragraph.text.lower():
+                    remote = "hybrid"
+                    break
+
             title = job.find("h6", class_="uk-margin-remove uk-text-bold").text.strip()
             locations = []
 
@@ -36,7 +47,8 @@ class GFK(Scraper):
             locations = (
                 "București" if not locations or len(locations) == 1 else locations
             )
-            self.push_job(title, link, locations)
+
+            self.push_job(title, link, locations, remote=remote)
 
 
 gfk = GFK(
