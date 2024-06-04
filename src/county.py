@@ -92,6 +92,27 @@ abreviate_counties = {
     "vn": {"city": "Focșani", "county": "Vrancea"},
 }
 
+misspelled_cities = [
+    {
+        "București": [
+            "bucharest",
+            "bucuresti",
+            "buharest",
+            "buacharest",
+            "buahcharest",
+            "buchares",
+        ]
+    },
+    {"Cluj-Napoca": ["cluj napoca", "cluj", "cluj-napoca"]},
+    {"Bolintin-Deal": ["bolintin-deal", "bolintin - deal"]},
+    {"Câmpulung": ["campulung muscel", "campulung Muscel"]},
+    {"Poiana Lacului": ["poiana lacului"]},
+]
+
+misspelled_counties = [
+    {"București": ["bucuresti", "buharest", "bucharest", "buharest"]}
+]
+
 
 def has_diacritics(char):
     return any(unicodedata.combining(c) for c in char)
@@ -144,3 +165,40 @@ def get_county(town_or_towns):
             if county:
                 counties_list.append(county)
         return list(set(counties_list))
+
+
+def add_diacritics_to_county(county: str) -> str:
+    """
+    Adds diacritics to a county abbreviation.
+
+    Args:
+        county: A string representing a county.
+
+    Returns:
+        A string representing the county with diacritics or None if the county is not found.
+    """
+    county = remove_diacritics(county).lower()
+    for item in misspelled_counties:
+        for key, values in item.items():
+            for value in values:
+                if county == value:
+                    return key
+
+    for item in counties:
+        for key, _ in item.items():
+            if county == remove_diacritics(key).lower():
+                return key
+
+    return None
+
+
+def add_diacritics_to_city(city: str) -> str:
+    """
+    Adds diacritics to a city.
+
+    Args:
+        city: A string representing a city.
+
+    Returns:
+        A string representing the city with diacritics or None if the city is not found.
+    """
