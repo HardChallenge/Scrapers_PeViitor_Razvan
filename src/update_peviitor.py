@@ -8,6 +8,7 @@ class UpdatePeViitor:
     POST_URL = "https://api.peviitor.ro/v5/add/"
     LOGO_URL = "https://api.peviitor.ro/v1/logo/add/"
     TOKEN_URL = "https://api.peviitor.ro/v5/get_token/"
+    USER_AGENT = "'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36'"
 
     def __init__(self):
         self.POST_HEADER = {
@@ -23,7 +24,9 @@ class UpdatePeViitor:
         token_endpoint = "https://api.peviitor.ro/v5/get_token/"
 
         token = requests.post(
-            token_endpoint, json={"email": "chichiraurazvan@yahoo.com"}
+            token_endpoint,
+            json={"email": "chichiraurazvan@yahoo.com"},
+            headers={"User-Agent": self.USER_AGENT},
         )
 
         return token.json()["access"]
