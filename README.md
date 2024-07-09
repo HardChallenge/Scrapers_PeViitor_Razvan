@@ -39,8 +39,7 @@ This repository contains a collection of web scrapers written in Python, specifi
 
 1. **Run a scraper and send data to peviitor.ro**:
      ```sh
-    cd sites
-    python3 scraper_name.py
+    python3 -m sites.scraper_name
     ```
 
 
