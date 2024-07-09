@@ -28,6 +28,11 @@ class Scraper:
         soup = BeautifulSoup(response.text, "lxml")
         return soup
 
+    def get_selenium(self, driver, link=None):
+        driver.get(self.url if link is None else link)
+        driver.implicitly_wait(10)
+        return driver.page_source
+
     def get_json_link(self, link):
         return requests.get(url=link, headers=self.headers).json()
 

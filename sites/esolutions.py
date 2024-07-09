@@ -1,8 +1,6 @@
 from src.validate_city import validate_city
 from src.scraper import Scraper
 
-import re
-
 
 class eSolutions(Scraper):
     def __init__(self, company_name, url, logo_url):

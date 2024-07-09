@@ -1,8 +1,6 @@
 from src.scraper import Scraper
 from src.validate_city import validate_city
 
-import re
-
 
 class Sabs(Scraper):
     def __init__(self, company_name, url, logo_url):
