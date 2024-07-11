@@ -42,12 +42,12 @@ class Be(Scraper):
                 print(location)
                 city = [i.strip() for i in location.split(",")][0]
 
-                city = validate_city(city)
-
                 if city == "Romania":
                     city = "București"
-                elif city is None:
-                    continue
+                else:
+                    city = validate_city(city)
+                    if city is None:
+                        continue
 
                 job_title = job.find("h5").text.strip()
                 link = f'{self.url}{job.find("a", class_="text-secondary")["href"]}'
