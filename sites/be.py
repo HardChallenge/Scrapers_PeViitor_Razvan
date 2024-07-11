@@ -39,12 +39,14 @@ class Be(Scraper):
         for job in jobs:
             location = job.find("span", class_="text-secondary").text.strip()
             if location:
-                city, _, country = [i.strip() for i in location.split(",")]
-                if country != "Romania":
-                    continue
+                print(location)
+                city = [i.strip() for i in location.split(",")][0]
 
                 city = validate_city(city)
-                if city is None:
+
+                if city == "Romania":
+                    city = "București"
+                elif city is None:
                     continue
 
                 job_title = job.find("h5").text.strip()
