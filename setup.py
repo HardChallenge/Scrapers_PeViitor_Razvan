@@ -7,10 +7,6 @@ setup(
     url="",
     author="Peviitor",
     packages=find_packages(),
-    install_requires=[
-        "beautifulsoup4",
-        "lxml",
-        "requests",
-    ],
+    install_requires=["beautifulsoup4", "lxml", "requests", "selenium"],
     python_requires=">=3.10",
 )
